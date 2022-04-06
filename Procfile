@@ -1,1 +1,1 @@
-npm run build && npm start
+web:ts-node/dist/server.js
