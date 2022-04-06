@@ -1,0 +1,19 @@
+{
+  "name": "freebusy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "node --max-old-space-size=${NODE_MAX_MEM:-2048} app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/afikshani/freebusy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/afikshani/freebusy/issues"
+  },
+  "homepage": "https://github.com/afikshani/freebusy#readme"
+}
