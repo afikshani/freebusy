@@ -1,14 +1,10 @@
-const express = require('express');
+"use strict";
+import express from "express";
+import routes from "./routes";
+import bodyParser from "body-parser";
 const app = express();
-const PORT = process.env.PORT || 3000;
+app.use(bodyParser.json());
+app.use(routes);
 
-try {
-    app.use(require('./Routes'));
-    app.listen(PORT, () => {
-        console.log(`Free busy mixer service listening on port: ${PORT}`);
-    });
 
-} catch(err) {
-    console.error(err.stack);
-    process.exit(1);
-}
+export default app;

@@ -1,22 +1,9 @@
-const express = require('express');
-const fs = require('fs');
-const path = require('path');
-
-function getFileType(filename) {
-    const fileType = path.extname(filename).split('.');
-    return fileType[fileType.length - 1];
-}
-
+import express from "express";
 const router = express.Router();
+import handleFreeBusyRequest from "../controllers/freebusyController";
 
-fs.readdirSync(__dirname).forEach(function (file) {
-    if (file === path.basename(__filename)) return;  //don't treat index.js
-    const typeOfFile = (getFileType(file));
-    if (typeOfFile!== "js") return;
+router.get("/api/freeBusy", handleFreeBusyRequest);
 
-    const fileName = path.basename(file, ".js");
-    console.log(`Loading Controller: ${fileName}`);
-    router.use(require(`${__dirname}/${file}`));
-});
+console.log("Loaded free busy routes");
 
-module.exports = router;
+export default router;
